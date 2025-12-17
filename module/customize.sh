@@ -38,6 +38,11 @@ ui_print "- Finalizing..."
 find_config
 migrate_config
 
+CONFIG_FILE="/data/adb/tricky_store/auto_add_config"
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "disabled" > "$CONFIG_FILE"
+fi
+
 rm -f "$MODPATH/install_func.sh"
 
 ui_print " "
